@@ -9,13 +9,16 @@
         <template v-else>
           <input type="text" v-model="item.message" @keyup.enter="doneEdit(index)"/>
         </template>
+        <span>
+          <md-button class="md-icon-button md-raised" v-on:click="editItem(index)">
+            <md-icon class="md-primary">edit</md-icon>
+          </md-button>
 
-        <md-button class="md-icon-button" v-on:click="editItem(index)">
-          <md-icon>edit</md-icon>
-        </md-button>
-        <md-button class="md-icon-button" v-on:click="deleteItem(index)">
-          <md-icon>delete</md-icon>
-        </md-button>
+          <md-button class="md-icon-button md-raised" v-on:click="deleteItem(index)">
+            <md-icon class="md-accent">delete</md-icon>
+          </md-button>
+        </span>
+
       </md-list-item>
     </md-list>
     {{itemLists}}
